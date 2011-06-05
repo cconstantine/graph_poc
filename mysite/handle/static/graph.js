@@ -6,12 +6,15 @@ function AjaxGraph(doc, url, totalPoints, updateInterval) {
 	    mode: 'time',
 	    twelveHourClock: true
 	},
+	ticks: 10,
 	updater: {
 	    updateInterval: updateInterval,
 	    totalPoints: totalPoints,
 	    ajax: {
-		params: {'hi' :1 },
-		url: 'api'
+		url: 'api',
+		timeout: 2000,
+		method: 'GET',
+		data: {hi : 1}
 	    }
 
 	},
